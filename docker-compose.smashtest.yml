@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+    testrunner:
+        image: smashtest_visual_docker
+        build: .
+        volumes:
+            - ${PWD}/:/code/
+
+networks:
+  default:
+    external: true
+    name: seleniumgrid
