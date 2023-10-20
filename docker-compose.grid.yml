@@ -1,7 +1,7 @@
 version: '3.7'
 services:
     chrome:
-        image: selenium/node-chrome:3.141.59-20210830
+        image: selenium/standalone-chrome:latest
         networks: 
             - seleniumgrid
         volumes:
@@ -12,7 +12,7 @@ services:
             - HUB_HOST=hub
 
     firefox:
-        image: selenium/node-firefox:3.141.59-20210830
+        image: selenium/standalone-firefox:latest
         networks: 
             - seleniumgrid        
         volumes:
@@ -22,7 +22,7 @@ services:
         environment:
             - HUB_HOST=hub
     hub:
-        image: selenium/hub:3.141.59-20210830
+        image: selenium/hub
         networks: 
             - seleniumgrid        
         ports:
